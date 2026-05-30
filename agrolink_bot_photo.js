@@ -6,7 +6,7 @@ import fetch from "node-fetch";
 import fs from "fs";
 import path from "path";
 import { getSession, saveSession, deleteSession, sauvegarderOffre } from "./database.js";
-import { postOfferToFacebook } from "./facebook_poster.js";
+import { postOfferToFacebook } from "./facebook_poster_photo.js";
 import { initialiserPaiement } from "./paiement.js";
 
 const app = express();
