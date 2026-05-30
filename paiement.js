@@ -92,7 +92,7 @@ export async function verifierPaiement(transaction_id) {
 // ROUTES EXPRESS pour les webhooks CinetPay
 // À ajouter dans agrolink_bot_final.js
 // ══════════════════════════════════════════════════════════════════════════════
-export function ajouterRoutesP aiement(app, { sendMessage, sauvegarderOffre, enregistrerPaiement, marquerOffrePubliee, postOfferToFacebook }) {
+export function ajouterRoutesPaiement(app, { sendMessage, sauvegarderOffre, enregistrerPaiement, marquerOffrePubliee, postOfferToFacebook }) {
 
   // CinetPay appelle cette URL après chaque paiement (succès ou échec)
   app.post("/paiement/notification", async (req, res) => {
