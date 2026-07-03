@@ -14,12 +14,13 @@ import { fileURLToPath } from "url";
 
 const app = express();
 app.use(express.json());
+
 //Route add for policy file - START
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 app.get('/privacy-policy', (req, res) => {
-  res.sendFile(path.join(__dirname, 'privacy-policy.html'));
+  res.sendFile(path.join(__dirname, 'privacy-policy-full.html'));
 });
 //Route add for policy file - END
 
