@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de confidentialité — Agrolink</title>
+<style>
+  :root{
+    --soil-900:#2b2115;
+    --soil-700:#4a3826;
+    --paper:#faf7f0;
+    --paper-line:#e6ddc9;
+    --leaf-600:#3c6e47;
+    --leaf-100:#e7f0e4;
+    --clay:#b5652f;
+    --text:#2a2a24;
+    --muted:#6b6357;
+    --serif: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    --sans: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--text);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .field{
+    position:fixed;
+    top:0;left:0;right:0;
+    height:6px;
+    background:linear-gradient(90deg, var(--leaf-600) 0%, var(--leaf-600) 33%, var(--clay) 33%, var(--clay) 66%, var(--soil-700) 66%, var(--soil-700) 100%);
+  }
+  header{
+    max-width:720px;
+    margin:0 auto;
+    padding:64px 24px 32px;
+  }
+  .eyebrow{
+    font-size:13px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--leaf-600);
+    font-weight:600;
+    margin:0 0 12px;
+  }
+  h1{
+    font-family:var(--serif);
+    font-size:40px;
+    line-height:1.15;
+    margin:0 0 8px;
+    color:var(--soil-900);
+    font-weight:600;
+  }
+  .subtitle{
+    color:var(--muted);
+    font-size:16px;
+    margin:0 0 24px;
+  }
+  .meta{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+    font-size:13px;
+    color:var(--muted);
+    border-top:1px solid var(--paper-line);
+    padding-top:16px;
+  }
+  main{
+    max-width:720px;
+    margin:0 auto;
+    padding:8px 24px 96px;
+  }
+  section{
+    margin-bottom:40px;
+  }
+  h2{
+    font-family:var(--serif);
+    font-size:22px;
+    color:var(--soil-900);
+    margin:0 0 14px;
+    padding-bottom:8px;
+    border-bottom:2px solid var(--leaf-100);
+  }
+  h2 .num{
+    color:var(--clay);
+    font-family:var(--sans);
+    font-weight:700;
+    font-size:14px;
+    margin-right:8px;
+    vertical-align:middle;
+  }
+  p{
+    margin:0 0 14px;
+    font-size:15.5px;
+  }
+  ul{
+    margin:0 0 14px;
+    padding-left:20px;
+  }
+  li{
+    margin-bottom:8px;
+    font-size:15.5px;
+  }
+  .card{
+    background:var(--leaf-100);
+    border-left:3px solid var(--leaf-600);
+    padding:16px 20px;
+    border-radius:2px;
+    margin:0 0 14px;
+  }
+  .card p{margin:0;font-size:14.5px;color:var(--soil-700);}
+  .data-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:0 0 14px;
+    font-size:14.5px;
+  }
+  .data-table th{
+    text-align:left;
+    font-family:var(--sans);
+    font-weight:600;
+    color:var(--soil-900);
+    padding:10px 12px;
+    background:var(--leaf-100);
+    border-bottom:1px solid var(--paper-line);
+  }
+  .data-table td{
+    padding:10px 12px;
+    border-bottom:1px solid var(--paper-line);
+    vertical-align:top;
+    color:var(--text);
+  }
+  .contact-block{
+    background:var(--soil-900);
+    color:var(--paper);
+    padding:28px 24px;
+    border-radius:4px;
+    margin-top:8px;
+  }
+  .contact-block h2{
+    color:var(--paper);
+    border-bottom-color:rgba(255,255,255,0.15);
+  }
+  .contact-block p{color:#d8cfc0;}
+  .contact-block a{color:#f2e2c9;text-decoration:underline;}
+  .placeholder{
+    background:rgba(213,119,87,.18);
+    color:var(--clay);
+    padding:1px 6px;
+    border-radius:3px;
+    font-weight:600;
+    font-size:.95em;
+  }
+  footer{
+    max-width:720px;
+    margin:0 auto;
+    padding:0 24px 48px;
+    font-size:13px;
+    color:var(--muted);
+    border-top:1px solid var(--paper-line);
+    padding-top:20px;
+  }
+  @media (max-width:600px){
+    h1{font-size:30px;}
+    header{padding:44px 20px 24px;}
+    main{padding:8px 20px 64px;}
+  }
+  .lang-switch{
+    position:fixed;
+    top:16px;
+    right:16px;
+    z-index:10;
+    display:flex;
+    background:var(--paper);
+    border:1px solid var(--paper-line);
+    border-radius:20px;
+    padding:3px;
+    box-shadow:0 2px 8px rgba(43,33,21,.08);
+  }
+  .lang-switch button{
+    border:none;
+    background:transparent;
+    font-family:var(--sans);
+    font-size:13px;
+    font-weight:600;
+    padding:6px 14px;
+    border-radius:16px;
+    cursor:pointer;
+    color:var(--muted);
+  }
+  .lang-switch button.active{
+    background:var(--leaf-600);
+    color:var(--paper);
+  }
+  #content-en{display:none;}
+  body.lang-en #content-fr{display:none;}
+  body.lang-en #content-en{display:block;}
+</style>
+</head>
+<body>
+<div class="field"></div>
+
+<div class="lang-switch">
+  <button id="btn-fr" class="active" onclick="setLang('fr')">FR</button>
+  <button id="btn-en" onclick="setLang('en')">EN</button>
+</div>
+
+<!-- ============ FRENCH ============ -->
+<div id="content-fr">
+
+<header>
+  <p class="eyebrow">Agrolink</p>
+  <h1>Politique de confidentialité</h1>
+  <p class="subtitle">Comment Agrolink collecte, utilise et protège vos informations lorsque vous utilisez notre service sur WhatsApp.</p>
+  <div class="meta">
+    <span>Dernière mise à jour : <span class="placeholder">[JJ/MM/AAAA]</span></span>
+    <span>Éditeur : <span class="placeholder">[Nom de l'entreprise / de la structure]</span></span>
+  </div>
+</header>
+
+<main>
+
+  <section>
+    <h2><span class="num">01</span>Introduction</h2>
+    <p>
+      Agrolink est un service accessible via WhatsApp qui accompagne les producteurs et acteurs du secteur agricole au Burkina Faso.
+      Cette politique explique quelles données nous collectons lorsque vous utilisez Agrolink, pourquoi nous les collectons,
+      comment elles sont utilisées et protégées, et quels sont vos droits.
+    </p>
+    <p>
+      En utilisant Agrolink, vous acceptez les pratiques décrites dans ce document. Si vous n'êtes pas d'accord avec l'une de ces
+      pratiques, nous vous invitons à ne pas utiliser le service.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>Données que nous collectons</h2>
+    <p>Pour fonctionner, Agrolink collecte les informations suivantes lorsque vous interagissez avec nous sur WhatsApp :</p>
+    <table class="data-table">
+      <tr><th>Donnée</th><th>Pourquoi nous la collectons</th></tr>
+      <tr>
+        <td>Numéro de téléphone / identifiant WhatsApp</td>
+        <td>Vous identifier, vous envoyer des réponses et assurer le suivi de nos échanges</td>
+      </tr>
+      <tr>
+        <td>Localisation ou région déclarée</td>
+        <td>Vous fournir des informations agricoles pertinentes pour votre zone (météo, conseils, marchés locaux)</td>
+      </tr>
+      <tr>
+        <td>Contenu des messages échangés</td>
+        <td>Comprendre vos demandes et vous apporter une réponse adaptée</td>
+      </tr>
+      <tr>
+        <td>Nom et informations de profil WhatsApp</td>
+        <td>Personnaliser nos échanges et faciliter votre suivi dans nos services</td>
+      </tr>
+    </table>
+    <div class="card">
+      <p>Nous ne collectons que les informations nécessaires au fonctionnement du service. Nous ne demandons jamais de mot de passe, de code PIN ou de coordonnées bancaires par ce canal.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span>Comment nous utilisons vos données</h2>
+    <ul>
+      <li>Répondre à vos messages et demandes via notre assistant WhatsApp</li>
+      <li>Vous fournir des informations, conseils ou alertes agricoles adaptés à votre région</li>
+      <li>Améliorer la qualité et la pertinence de nos réponses</li>
+      <li>Assurer le bon fonctionnement technique du service et prévenir les abus</li>
+      <li>Communiquer avec vous au sujet du service, si nécessaire</li>
+    </ul>
+    <p>Nous n'utilisons pas vos données à des fins publicitaires et ne les vendons à aucun tiers.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span>Partage des données</h2>
+    <p>Vos données peuvent être partagées uniquement dans les cas suivants :</p>
+    <ul>
+      <li>Avec Meta / WhatsApp Business, qui fournit l'infrastructure technique nécessaire à l'échange de messages</li>
+      <li>Avec nos prestataires d'hébergement technique (ex. Railway), dans le seul cadre du fonctionnement du service</li>
+      <li>Si la loi l'exige, ou pour protéger nos droits, notre sécurité ou celle d'autrui</li>
+    </ul>
+    <p>Nous ne partageons jamais vos données à des fins commerciales avec des tiers non mentionnés ci-dessus.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span>Conservation des données</h2>
+    <p>
+      Nous conservons vos données aussi longtemps que nécessaire pour vous fournir le service, puis nous les supprimons
+      ou les rendons anonymes, sauf obligation légale de conservation plus longue.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">06</span>Sécurité</h2>
+    <p>
+      Nous mettons en œuvre des mesures techniques et organisationnelles raisonnables pour protéger vos données contre
+      l'accès non autorisé, la perte ou la divulgation. Aucun système n'étant totalement infaillible, nous vous encourageons
+      à ne jamais partager d'informations sensibles (mots de passe, données bancaires) via WhatsApp.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">07</span>Vos droits</h2>
+    <p>Vous pouvez à tout moment :</p>
+    <ul>
+      <li>Demander à consulter les données que nous détenons à votre sujet</li>
+      <li>Demander la correction ou la suppression de vos données</li>
+      <li>Retirer votre consentement en cessant d'utiliser le service ou en nous contactant</li>
+    </ul>
+    <p>Pour exercer ces droits, contactez-nous via les coordonnées ci-dessous.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">08</span>Modifications de cette politique</h2>
+    <p>
+      Nous pouvons mettre à jour cette politique de confidentialité de temps à autre. La date de dernière mise à jour
+      figure en haut de cette page. Nous vous invitons à la consulter régulièrement.
+    </p>
+  </section>
+
+  <section>
+    <div class="contact-block">
+      <h2><span class="num">09</span>Nous contacter</h2>
+      <p>Pour toute question concernant cette politique de confidentialité ou vos données personnelles :</p>
+      <p>
+        Email : <a href="mailto:contact@example.com" class="placeholder">[votre-email@agrolink.bf]</a><br>
+        Téléphone / WhatsApp : <span class="placeholder">[+226 XX XX XX XX]</span><br>
+        Adresse : <span class="placeholder">[Ville, Burkina Faso]</span>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © <span class="year-fr"></span> Agrolink. Tous droits réservés.
+</footer>
+
+</div>
+
+<!-- ============ ENGLISH ============ -->
+<div id="content-en">
+
+<header>
+  <p class="eyebrow">Agrolink</p>
+  <h1>Privacy Policy</h1>
+  <p class="subtitle">How Agrolink collects, uses, and protects your information when you use our service on WhatsApp.</p>
+  <div class="meta">
+    <span>Last updated: <span class="placeholder">[DD/MM/YYYY]</span></span>
+    <span>Publisher: <span class="placeholder">[Company / organization name]</span></span>
+  </div>
+</header>
+
+<main>
+
+  <section>
+    <h2><span class="num">01</span>Introduction</h2>
+    <p>
+      Agrolink is a WhatsApp-based service that supports farmers and agricultural stakeholders in Burkina Faso.
+      This policy explains what data we collect when you use Agrolink, why we collect it, how it is used and protected,
+      and what your rights are.
+    </p>
+    <p>
+      By using Agrolink, you agree to the practices described in this document. If you do not agree with any of these
+      practices, please do not use the service.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>Data we collect</h2>
+    <p>To operate, Agrolink collects the following information when you interact with us on WhatsApp:</p>
+    <table class="data-table">
+      <tr><th>Data</th><th>Why we collect it</th></tr>
+      <tr>
+        <td>Phone number / WhatsApp ID</td>
+        <td>To identify you, send you responses, and keep track of our exchanges</td>
+      </tr>
+      <tr>
+        <td>Declared location or region</td>
+        <td>To provide agricultural information relevant to your area (weather, advice, local markets)</td>
+      </tr>
+      <tr>
+        <td>Content of exchanged messages</td>
+        <td>To understand your requests and provide a suitable response</td>
+      </tr>
+      <tr>
+        <td>Name and WhatsApp profile information</td>
+        <td>To personalize our exchanges and help track your use of our services</td>
+      </tr>
+    </table>
+    <div class="card">
+      <p>We only collect the information necessary to operate the service. We never ask for a password, PIN code, or banking details through this channel.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span>How we use your data</h2>
+    <ul>
+      <li>Respond to your messages and requests through our WhatsApp assistant</li>
+      <li>Provide information, advice, or agricultural alerts tailored to your region</li>
+      <li>Improve the quality and relevance of our responses</li>
+      <li>Ensure the technical operation of the service and prevent abuse</li>
+      <li>Communicate with you about the service, when necessary</li>
+    </ul>
+    <p>We do not use your data for advertising purposes and never sell it to third parties.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span>Data sharing</h2>
+    <p>Your data may only be shared in the following cases:</p>
+    <ul>
+      <li>With Meta / WhatsApp Business, which provides the technical infrastructure needed to exchange messages</li>
+      <li>With our technical hosting providers (e.g. Railway), solely for the purpose of operating the service</li>
+      <li>Where required by law, or to protect our rights, safety, or the safety of others</li>
+    </ul>
+    <p>We never share your data for commercial purposes with third parties not mentioned above.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span>Data retention</h2>
+    <p>
+      We retain your data for as long as necessary to provide the service, after which it is deleted or anonymized,
+      unless a longer retention period is required by law.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">06</span>Security</h2>
+    <p>
+      We implement reasonable technical and organizational measures to protect your data against unauthorized access,
+      loss, or disclosure. As no system is completely infallible, we encourage you to never share sensitive information
+      (passwords, banking details) via WhatsApp.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">07</span>Your rights</h2>
+    <p>You may at any time:</p>
+    <ul>
+      <li>Request access to the data we hold about you</li>
+      <li>Request correction or deletion of your data</li>
+      <li>Withdraw your consent by discontinuing use of the service or by contacting us</li>
+    </ul>
+    <p>To exercise these rights, contact us using the details below.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">08</span>Changes to this policy</h2>
+    <p>
+      We may update this privacy policy from time to time. The last update date is shown at the top of this page.
+      We encourage you to check it periodically.
+    </p>
+  </section>
+
+  <section>
+    <div class="contact-block">
+      <h2><span class="num">09</span>Contact us</h2>
+      <p>For any question regarding this privacy policy or your personal data:</p>
+      <p>
+        Email: <a href="mailto:contact@example.com" class="placeholder">[your-email@agrolink.bf]</a><br>
+        Phone / WhatsApp: <span class="placeholder">[+226 XX XX XX XX]</span><br>
+        Address: <span class="placeholder">[City, Burkina Faso]</span>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © <span class="year-en"></span> Agrolink. All rights reserved.
+</footer>
+
+</div>
+
+<script>
+  const years = new Date().getFullYear();
+  document.querySelectorAll('.year-fr, .year-en').forEach(el => el.textContent = years);
+
+  function setLang(lang){
+    document.body.classList.toggle('lang-en', lang === 'en');
+    document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.documentElement.lang = lang;
+  }
+</script>
+
+</body>
+</html>
