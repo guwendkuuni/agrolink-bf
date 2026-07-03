@@ -8,9 +8,20 @@ import path from "path";
 import { getSession, saveSession, deleteSession, sauvegarderOffre } from "./database.js";
 import { postOfferToFacebook } from "./facebook_poster_photo.js";
 import { initialiserPaiement } from "./paiement.js";
+//Import for policy file
+import { fileURLToPath } from "url";
+
 
 const app = express();
 app.use(express.json());
+//Route add for policy file - START
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+app.get('/privacy-policy', (req, res) => {
+  res.sendFile(path.join(__dirname, 'privacy-policy.html'));
+});
+//Route add for policy file - END
 
 const WA_TOKEN   = process.env.WA_TOKEN;
 const PHONE_ID   = process.env.WA_PHONE_ID;
